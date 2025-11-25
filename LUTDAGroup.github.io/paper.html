@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
     Editorial by HTML5 UP
     html5up.net | @ajlkn
@@ -29,8 +29,8 @@
                 <!-- Content -->
                 <section>
                     <!--<header class="main">
-                        <h1>Paper</h1>
-                    </header>-->
+                    <h1>Paper</h1>
+                </header>-->
                     <h2>Paper</h2>
 
                     <div class="paper-list">
@@ -352,7 +352,7 @@
 
                 </section>
 
-                <section>
+                <section id="press">
                     <h2>Press</h2>
 
                     <b>"The new AI StellarStream algorithm: Artificial intelligence helps astronomers uncover more mysteries of the Milky Way" </b><a href="https://tidenews.com.cn/news.html?id=2876425" target="_blank" class="doi-link"><img src="https://img.icons8.com/ios-glyphs/20/000000/link.png" alt="link" /></a>
@@ -363,90 +363,104 @@
 
 
 
-    <style>
-        .paper-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2em;
-        }
-
-        .paper {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-            .paper.show {
-                opacity: 1;
-                transform: translateY(0);
+        <style>
+            .paper-list {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
             }
 
-            .paper p {
-                margin: 0.2em 0;
+            .paper {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.6s ease-out;
             }
 
-        .doi-link img {
-            vertical-align: middle;
-            margin-left: 0.3em;
-        }
-    </style>
+                .paper.show {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
 
-    <script>
-        // Scroll animation using IntersectionObserver
-        const papers = document.querySelectorAll('.paper');
+                .paper p {
+                    margin: 0.2em 0;
+                }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
+            .doi-link img {
+                vertical-align: middle;
+                margin-left: 0.3em;
+            }
+        </style>
+
+        <script>
+            // Scroll animation using IntersectionObserver
+            const papers = document.querySelectorAll('.paper');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            papers.forEach(paper => observer.observe(paper));
+        </script>
+
+
+        <!--roll motion-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const hash = window.location.hash;
+                if (hash) {
+                    const target = document.querySelector(hash);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
-        }, { threshold: 0.1 });
-
-        papers.forEach(paper => observer.observe(paper));
-    </script>
+        </script>
 
 
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <div class="inner">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
 
 
-            <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <!--<li><a href="about.html">About</a></li>-->
-                    <li><a href="group_members.html">Group Members</a></li>
-                    <li>
-                        <span class="opener">MWLUDPSG Programs</span>
-                        <ul>
-                            <li><a href="galacticbulge.html">The Galactic Bulge</a></li>
-							<li><a href="Galactic_Structures.html">Galactic Structures and Streams</a></li>
-							<li><a href="Stellar_parameter.html">Stellar parameters</a></li>
-							<li><a href="Galactic_disk.html">Structure and Evolution of the Galactic Disk</a></li>
-                        </ul>
-                    <li><a href="paper.html">Progress</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                </ul>
-            </nav>
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <!--<li><a href="about.html">About</a></li>-->
+                        <li><a href="group_members.html">Group Members</a></li>
+                        <li>
+                            <span class="opener">MWLUDPSG Programs</span>
+                            <ul>
+                                <li><a href="galacticbulge.html">MWLUDPSG-BPSG</a></li>
+                                <li><a href="Galactic_Structures.html">MWLUDPSG-GS3Hunter</a></li>
+                                <li><a href="Stellar_parameter.html">MWLUDPSG-SASG</a></li>
+                                <li><a href="Galactic_disk.html">MWLUDPSG-DPSG-D</a></li>
+                            </ul>
+                        <li><a href="paper.html">Progress</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </nav>
 
 
 
 
 
-            <!-- Footer -->
-            <footer id="footer">
-                <p class="copyright">&copy; Untitled. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-            </footer>
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                </footer>
 
+            </div>
         </div>
-    </div>
 
-   </div>
+    </div>
 
 
 
